@@ -36,7 +36,7 @@ const Services = () => {
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
-          I focus on best quality for the project
+          Focus on best quality
           <br /> and customer satisfaction
         </p>
         <hr />

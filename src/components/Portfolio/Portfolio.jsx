@@ -1,34 +1,23 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const Portfolio = () => {
-  const items = [
-    {
-      id: 1,
-      title: "111Banh Mi Oven",
-      img: "https://t3.ftcdn.net/jpg/03/54/17/86/360_F_354178616_uSdqA6i1A1vkkskFPKOoxQOED0ZMIcn3.jpg",
-      desc: "Resturent Management and ordering System  using ReactJS NodeJS ExpressJs And PostgreSql ",
-    },
-    {
-      id: 2,
-      title: "222Banh Mi Oven",
-      img: "https://t3.ftcdn.net/jpg/03/54/17/86/360_F_354178616_uSdqA6i1A1vkkskFPKOoxQOED0ZMIcn3.jpg",
-      desc: "Resturent Management and ordering System  using ReactJS NodeJS ExpressJs And PostgreSql ",
-    },
-    {
-      id: 3,
-      title: "333Banh Mi Oven",
-      img: "https://t3.ftcdn.net/jpg/03/54/17/86/360_F_354178616_uSdqA6i1A1vkkskFPKOoxQOED0ZMIcn3.jpg",
-      desc: "Resturent Management and ordering System  using ReactJS NodeJS ExpressJs And PostgreSql ",
-    },
-    {
-      id: 4,
-      title: "4444Banh Mi Oven",
-      img: "https://t3.ftcdn.net/jpg/03/54/17/86/360_F_354178616_uSdqA6i1A1vkkskFPKOoxQOED0ZMIcn3.jpg",
-      desc: "Resturent Management and ordering System  using ReactJS NodeJS ExpressJs And PostgreSql ",
-    },
-  ];
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://intense-dawn-79194-9e92add1c908.herokuapp.com/display")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
+
+      .then((data) => setData(data))
+
+      .catch((error) => console.log(error));
+  }, []);
 
   const Single = ({ item }) => {
     const ref = useRef();
@@ -42,11 +31,17 @@ const Portfolio = () => {
         <div className="container">
           <div className="wrapper">
             <div className="imageContainer" ref={ref}>
-              <img src={item.img} alt="" />
+              <img
+                src={
+                  `https://intense-dawn-79194-9e92add1c908.herokuapp.com/project_image/` +
+                  item.img
+                }
+                alt=""
+              />
             </div>
             <motion.div className="textContainer" style={{ y }}>
-              <h2>{item.title}</h2>
-              <p>{item.desc}</p>
+              <h2>{item.project_name}</h2>
+              <p>{item.description}</p>
               <button>See Demo</button>
             </motion.div>
           </div>
@@ -72,8 +67,8 @@ const Portfolio = () => {
         <h1>Featured Works</h1>
         <motion.div className="progressBar" style={{ scaleX }}></motion.div>
       </div>
-      {items.map((item) => (
-        <Single item={item} key={item.id} />
+      {data.map((item, index) => (
+        <Single item={item} key={index} />
       ))}
     </div>
   );

@@ -6,7 +6,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import linkedin from "../../assets/linkedin.png";
 import facebook from "../../assets/facebook.png";
 import whatsapp from "../../assets/whatsapp.png";
-import youtube from "../../assets/youtube.png";
+import github from "../../assets/github.png";
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -22,16 +22,30 @@ const Navbar = () => {
         </motion.span>
         <div className="social">
           <a href="">
-            <img src={linkedin} alt="" />
+            <img
+              src={linkedin}
+              alt="https://www.linkedin.com/in/myo-lwin-moe-aung-134312245/"
+            />
           </a>
           <a href="">
-            <img src={facebook} alt="" />
+            <img
+              src={facebook}
+              alt="https://www.facebook.com/profile.php?id=100004829777007"
+            />
           </a>
-          <a href="">
+          <a href="https://api.whatsapp.com/send?phone=14253801963">
             <img src={whatsapp} alt="" />
           </a>
-          <a href="">
-            <img src={youtube} alt="mg" />
+          <a href="https://github.com/Jason272001">
+            <img
+              src={github}
+              alt=" "
+              style={{
+                width: "32px",
+                height: "32px",
+                marginTop: "-7px",
+              }}
+            />
           </a>
         </div>
       </div>

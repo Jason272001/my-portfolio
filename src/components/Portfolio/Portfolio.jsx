@@ -2,48 +2,43 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { getData } from "../../../lib/data";
+import { urlFor } from "../../../client";
 const Portfolio = () => {
-  const [data, setData] = useState([]);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("https://intense-dawn-79194-9e92add1c908.herokuapp.com/display")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-      })
+    const fetchData = async () => {
+      try {
+        const data = await getData();
+        setProjects(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-      .then((data) => setData(data))
-
-      .catch((error) => console.log(error));
+    fetchData();
   }, []);
-
-  const Single = ({ item }) => {
+  const Single = ({ item: { image, tital, desc, link } }) => {
     const ref = useRef();
     const { scrollYProgress } = useScroll({
       target: ref,
       //   offset: ["start start", "end start"],
     });
     const y = useTransform(scrollYProgress, [0, 1], [-500, 500]);
+    const imageurl = urlFor(image).width(2000);
     return (
       <section>
         <div className="container">
           <div className="wrapper">
             <div className="imageContainer" ref={ref}>
-              <img
-                src={
-                  `https://intense-dawn-79194-9e92add1c908.herokuapp.com/project_image/` +
-                  item.img
-                }
-                alt=""
-              />
+              <img src={imageurl} alt="" />
             </div>
             <motion.div className="textContainer" style={{ y }}>
-              <h2>{item.project_name}</h2>
-              <p>{item.description}</p>
+              <h2>{tital}</h2>
+              <p>{desc}</p>
               <button>
-                <a href={item.link}>See Demo</a>
+                <a href={link}>See Demo</a>
               </button>
             </motion.div>
           </div>
@@ -69,7 +64,7 @@ const Portfolio = () => {
         <h1>Featured Works</h1>
         <motion.div className="progressBar" style={{ scaleX }}></motion.div>
       </div>
-      {data.map((item, index) => (
+      {projects.map((item, index) => (
         <Single item={item} key={index} />
       ))}
     </div>

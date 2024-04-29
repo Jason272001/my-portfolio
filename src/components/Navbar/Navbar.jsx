@@ -21,17 +21,11 @@ const Navbar = () => {
           Jason Myo
         </motion.span>
         <div className="social">
-          <a href="">
-            <img
-              src={linkedin}
-              alt="https://www.linkedin.com/in/myo-lwin-moe-aung-134312245/"
-            />
+          <a href="https://www.linkedin.com/in/myo-lwin-moe-aung-134312245/">
+            <img src={linkedin} alt="" />
           </a>
-          <a href="">
-            <img
-              src={facebook}
-              alt="https://www.facebook.com/profile.php?id=100004829777007"
-            />
+          <a href="https://www.facebook.com/profile.php?id=100004829777007">
+            <img src={facebook} alt="" />
           </a>
           <a href="https://api.whatsapp.com/send?phone=14253801963">
             <img src={whatsapp} alt="" />

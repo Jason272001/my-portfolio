@@ -37,9 +37,8 @@ const Portfolio = () => {
             <motion.div className="textContainer" style={{ y }}>
               <h2>{tital}</h2>
               <p>{desc}</p>
-              <button>
-                <a href={link}>See Demo</a>
-              </button>
+
+              <a href={link}>See Demo</a>
             </motion.div>
           </div>
         </div>

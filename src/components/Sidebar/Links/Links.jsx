@@ -1,8 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 const Links = () => {
-  const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
+  const items = ["Homepage", "Services", "Portfolio", "Contact"];
   const variants = {
     open: {
       transition: {
@@ -30,15 +31,16 @@ const Links = () => {
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
-        <motion.a
-          href={`${item}`}
+        <motion.div
           key={item}
           variants={iteamvariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
-          {item}
-        </motion.a>
+          <Link to={`${item}`} spy={true} smooth={true} duration={500}>
+            {item}
+          </Link>
+        </motion.div>
       ))}
     </motion.div>
   );

@@ -1,9 +1,9 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";
 import "./Portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { getData } from "../../../lib/data";
 import { urlFor } from "../../../client";
+
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
 
@@ -19,26 +19,28 @@ const Portfolio = () => {
 
     fetchData();
   }, []);
+
   const Single = ({ item: { image, tital, desc, link } }) => {
     const ref = useRef();
     const { scrollYProgress } = useScroll({
       target: ref,
-      //   offset: ["start start", "end start"],
     });
     const y = useTransform(scrollYProgress, [0, 1], [-500, 500]);
-    const imageurl = urlFor(image).width(2000);
+    const imageurl = urlFor(image).width(2000).url(); // Ensure URL is correctly formatted
+
     return (
       <section>
         <div className="container">
           <div className="wrapper">
             <div className="imageContainer" ref={ref}>
-              <img src={imageurl} alt="" />
+              <img src={imageurl} alt={tital} />
             </div>
             <motion.div className="textContainer" style={{ y }}>
               <h2>{tital}</h2>
               <p>{desc}</p>
-
-              <a href={link}>See Demo</a>
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                See Demo
+              </a>
             </motion.div>
           </div>
         </div>
@@ -69,4 +71,5 @@ const Portfolio = () => {
     </div>
   );
 };
+
 export default Portfolio;

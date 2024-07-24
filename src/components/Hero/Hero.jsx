@@ -58,9 +58,9 @@ const Hero = () => {
           </motion.h1>
           <motion.div className="buttons" variants={textVariants}>
             <motion.button variants={textVariants}>
-              See the Latest Works
+              {" "}
+              <a href="tel:+1 425-380-1963">Contact Me</a>
             </motion.button>
-            <motion.button variants={textVariants}>Contacct Me</motion.button>
           </motion.div>
           <motion.img
             src={scroll}

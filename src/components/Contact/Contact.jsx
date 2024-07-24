@@ -48,6 +48,7 @@ const Contact = () => {
       .then(
         (result) => {
           setSuccess(true);
+          window.alert("successfully sent email");
         },
         (error) => {
           setError(true);
@@ -149,8 +150,8 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1.5 }}
         >
-          <input type="text" required placeholder="Name" name="name" />
-          <input type="email" required placeholder="Email" name="email" />
+          <input type="text" required placeholder="Name" name="user_name" />
+          <input type="email" required placeholder="Email" name="user_email" />
           <textarea
             name="message"
             id=""

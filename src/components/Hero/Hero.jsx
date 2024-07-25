@@ -10,7 +10,7 @@ const Hero = () => {
         <h2> Jason Myo </h2>
         <h1>Full-Stack Developer and Project Management</h1>
         <button>
-          <a href="tel:+1 425-380-1963">Contact Me</a>
+          <a href="tel:+14253801963">Contact Me</a>
         </button>
       </div>
       <div className="imageContainer">

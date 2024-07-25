@@ -6,27 +6,45 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  padding-top: 80px; // New - Add padding to the top to avoid content hiding behind the navbar
   background-color: #0c0c1d;
   color: white;
 
   .textContainer {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     h2 {
       font-size: 24px;
+      @include mobile {
+        font-size: 16px; // Smaller font size for mobile
+      }
     }
     h1 {
       font-size: 48px;
+      @include mobile {
+        font-size: 18px; // Smaller font size for mobile
+      }
     }
     button {
       padding: 10px 20px;
       border: none;
+
       background-color: #ff6347;
+      width: 200px;
       color: white;
       cursor: pointer;
+      font-size: 16px; // Default font size for button
       a {
         text-decoration: none;
         color: inherit;
+      }
+
+      @include mobile {
+        padding: 5px 10px; // Smaller padding for mobile
+        font-size: 12px; // Smaller font size for mobile
+        width: 100px;
       }
     }
   }
@@ -35,9 +53,18 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+
     img {
       max-width: 100%;
-      height: auto;
+      height: 80vh;
+      @include mobile {
+        width: 250%; // Increase image size for mobile
+        max-width: 250%;
+        height: auto;
+      }
     }
   }
 }
+
+// Mixin for mobile styles

@@ -7,19 +7,17 @@ import linkedin from "../../assets/linkedin.png";
 import facebook from "../../assets/facebook.png";
 import whatsapp from "../../assets/whatsapp.png";
 import github from "../../assets/github.png";
+
 const Navbar = () => {
   return (
     <div className="navbar">
       <Sidebar />
-
       <div className="wrapper">
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-        >
-          Jason Myo
-        </motion.span>
+        ></motion.span>
         <div className="social">
           <a href="https://www.linkedin.com/in/myo-lwin-moe-aung-134312245/">
             <img src={linkedin} alt="" />
@@ -46,4 +44,5 @@ const Navbar = () => {
     </div>
   );
 };
+
 export default Navbar;

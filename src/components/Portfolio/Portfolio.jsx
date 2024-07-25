@@ -38,7 +38,12 @@ const Portfolio = () => {
             <motion.div className="textContainer" style={{ y }}>
               <h2>{tital}</h2>
               <p>{desc}</p>
-              <a href={link} target="_blank" rel="noopener noreferrer">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ zIndex: 10 }}
+              >
                 See Demo
               </a>
             </motion.div>

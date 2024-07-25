@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import "./Services.scss";
 import { motion, useInView } from "framer-motion";
 import people from "../../assets/people.webp";
@@ -30,9 +29,8 @@ const Services = () => {
       className="service"
       variants={variants}
       initial="initial"
-      //   whileInView="animate"
+      animate="animate"
       ref={ref}
-      animate={"animate"}
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
@@ -64,12 +62,16 @@ const Services = () => {
         >
           <h2>Branding</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore unde
-            rerum dolores. Quas libero animi, labore, vero quod alias beatae
-            excepturi quae voluptatibus soluta doloribus et, quidem unde ullam
-            praesentium!
+            Effective Branding Strategies:Branding is more than just a logo or a
+            color scheme; it's about creating a distinct identity that resonates
+            with your target audience. My approach to branding involves
+            understanding the core values and vision of your business and
+            translating them into a cohesive and compelling brand narrative.
+            From creating a unique brand voice to designing visual elements that
+            capture your essence, I ensure that every aspect of your brand
+            communicates your story effectively. Successful branding results in
+            strong customer loyalty and recognition in the market.
           </p>
-          <button>Go</button>
         </motion.div>
         <motion.div
           className="box"
@@ -77,12 +79,16 @@ const Services = () => {
         >
           <h2>Design</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore unde
-            rerum dolores. Quas libero animi, labore, vero quod alias beatae
-            excepturi quae voluptatibus soluta doloribus et, quidem unde ullam
-            praesentium!
+            Innovative and User-Centric Design: Great design combines aesthetics
+            with functionality. My design philosophy is centered around creating
+            user-friendly interfaces that are not only visually appealing but
+            also intuitive to navigate. Whether it's designing websites, mobile
+            apps, or marketing materials, I focus on delivering designs that
+            enhance user experience and engagement. My process includes thorough
+            research, wireframing, prototyping, and iterative testing to ensure
+            that the final product meets the needs of both the business and its
+            users.
           </p>
-          <button>Go</button>
         </motion.div>
         <motion.div
           className="box"
@@ -90,12 +96,16 @@ const Services = () => {
         >
           <h2>Maintenance</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore unde
-            rerum dolores. Quas libero animi, labore, vero quod alias beatae
-            excepturi quae voluptatibus soluta doloribus et, quidem unde ullam
-            praesentium!
+            Reliable Maintenance Services:Maintaining your digital assets is
+            crucial to ensuring they remain secure, up-to-date, and functional.
+            I offer comprehensive maintenance services that include regular
+            updates, security checks, and performance optimizations. Whether you
+            need ongoing support for your website, app, or software, I provide
+            timely and efficient solutions to prevent issues before they arise.
+            My goal is to keep your digital platforms running smoothly so you
+            can focus on growing your business without any technical
+            interruptions.
           </p>
-          <button>Go</button>
         </motion.div>
         <motion.div
           className="box"
@@ -103,12 +113,16 @@ const Services = () => {
         >
           <h2>Development</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore unde
-            rerum dolores. Quas libero animi, labore, vero quod alias beatae
-            excepturi quae voluptatibus soluta doloribus et, quidem unde ullam
-            praesentium!
+            Cutting-Edge Development Solutions:In today's fast-paced digital
+            landscape, having a robust and scalable development solution is
+            essential. I specialize in creating custom software, websites, and
+            applications tailored to your specific needs. Using the latest
+            technologies and best practices, I develop solutions that are
+            secure, efficient, and easy to maintain. From initial concept to
+            deployment, I work closely with you to ensure that the final product
+            not only meets but exceeds your expectations. Let me help you turn
+            your ideas into reality with innovative development services.
           </p>
-          <button>Go</button>
         </motion.div>
       </motion.div>
     </motion.div>

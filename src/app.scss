@@ -21,8 +21,16 @@ a {
 }
 
 section {
-  height: 100vh;
-  scroll-snap-align: center;
+  width: 100%;
+  min-height: 100vh; // Ensure each section takes full height
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; // Add some padding if needed
+  box-sizing: border-box; // Ensure padding is included in height calculations
+  scroll-snap-align: center; // Ensure sections snap to the center of the viewport
+  position: relative; // Ensure sections stack correctly
+  overflow: hidden; // Prevent overflow issues
 }
 
 @mixin mobile {

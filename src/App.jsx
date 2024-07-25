@@ -15,29 +15,27 @@ const App = () => {
       <Cursor />
 
       <div>
-        <section id="Homepage">
+        <section id="Homepage" className="section">
           <Navbar />
           <Hero />
         </section>
 
-        <section id="Services">
+        <section id="Services" className="section">
           <Parallax type="services" />
         </section>
-        <section>
+        <section className="section">
           <Services />
         </section>
 
-        <section id="Portfolio">
+        <section id="Portfolio" className="section">
           <Parallax type="portfolio" />
         </section>
         <Portfolio />
 
-        <section id="Contact">
+        <section id="Contact" className="section">
           <Contact />
         </section>
       </div>
-
-      {/* Login Page */}
     </div>
   );
 };

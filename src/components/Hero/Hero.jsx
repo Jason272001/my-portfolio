@@ -7,14 +7,26 @@ const Hero = () => {
   return (
     <div className="hero">
       <div className="textContainer">
-        <h2> Jason Myo </h2>
-        <h1>Full-Stack Developer and Project Management</h1>
-        <button>
-          <a href="tel:+14253801963">Contact Me</a>
-        </button>
+        <h2>Jason Myo</h2>
+        <h1>IT Support Specialist | Network Technician | Field Computer Specialist</h1>
+        <p>
+          Reliable IT support professional focused on troubleshooting, network
+          operations, system administration, and field service excellence.
+        </p>
+        <div className="buttonGroup">
+          <a className="cta" href="#" aria-label="Download Resume">
+            Download Resume
+          </a>
+          <a className="cta secondary" href="#Portfolio">
+            View Projects
+          </a>
+          <a className="cta secondary" href="#Contact">
+            Contact
+          </a>
+        </div>
       </div>
       <div className="imageContainer">
-        <img src={profile} alt="Profile" />
+        <img src={profile} alt="Jason Myo profile" />
       </div>
     </div>
   );

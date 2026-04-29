@@ -1,78 +1,86 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import "./Portfolio.scss";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { getData } from "../../../lib/data";
-import { urlFor } from "../../../client";
+
+const coreProjects = [
+  {
+    title: "Windows Server & Active Directory Virtual Lab",
+    description:
+      "Built a multi-VM lab environment to configure Active Directory users, organizational units, policies, and domain services.",
+    skills: "Windows Server, Active Directory, Group Policy, Virtualization",
+    status: "Lab Project",
+  },
+  {
+    title: "DHCP and DNS Server Configuration Lab",
+    description:
+      "Configured DHCP scopes, reservations, and DNS zones to deliver stable name resolution and automated IP assignment.",
+    skills: "DNS, DHCP, Windows Server, Network Troubleshooting",
+    status: "Lab Project",
+  },
+  {
+    title: "Wireshark Network Traffic Analysis",
+    description:
+      "Captured and analyzed packets to diagnose connectivity issues and verify protocol behavior across test devices.",
+    skills: "Wireshark, TCP/IP, Network Diagnostics",
+    status: "In Progress",
+  },
+  {
+    title: "Router and Home Network Configuration",
+    description:
+      "Configured router settings, subnetting, wireless security, and device segmentation for secure and reliable connectivity.",
+    skills: "Router Configuration, TCP/IP, Network Security",
+    status: "Lab Project",
+  },
+  {
+    title: "Ethernet Cable Installation and Testing",
+    description:
+      "Installed and terminated Ethernet cabling and tested cable quality and pinout integrity for office/home deployments.",
+    skills: "Cabling, Hardware Installation, Field Technician Skills",
+    status: "Lab Project",
+  },
+  {
+    title: "Help Desk Troubleshooting Case Studies",
+    description:
+      "Documented end-user support scenarios with root-cause analysis and step-by-step resolution workflows.",
+    skills: "User Support, Troubleshooting, Documentation",
+    status: "In Progress",
+  },
+];
+
+const additionalProjects = [
+  "Web applications built with JavaScript, HTML, and CSS",
+  "Python automation and scripting exercises",
+  "SQL practice projects for data handling and reporting",
+  "Version control workflows with Git and GitHub",
+];
 
 const Portfolio = () => {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getData();
-        setProjects(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const Single = ({ item: { image, tital, desc, link } }) => {
-    const ref = useRef();
-    const { scrollYProgress } = useScroll({
-      target: ref,
-    });
-    const y = useTransform(scrollYProgress, [0, 1], [-500, 500]);
-    const imageurl = urlFor(image).width(2000).url(); // Ensure URL is correctly formatted
-
-    return (
-      <section>
-        <div className="container">
-          <div className="wrapper">
-            <div className="imageContainer" ref={ref}>
-              <img src={imageurl} alt={tital} />
-            </div>
-            <motion.div className="textContainer" style={{ y }}>
-              <h2>{tital}</h2>
-              <p>{desc}</p>
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ zIndex: 10 }}
-              >
-                See Demo
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    );
-  };
-
-  const ref = useRef();
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"],
-  });
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-  });
-
   return (
-    <div className="portfolio" ref={ref}>
+    <div className="portfolio">
       <div className="progress">
-        <h1>Featured Works</h1>
-        <motion.div className="progressBar" style={{ scaleX }}></motion.div>
+        <h1>IT & Networking Projects</h1>
       </div>
-      {projects.map((item, index) => (
-        <Single item={item} key={index} />
-      ))}
+
+      <div className="projectsGrid">
+        {coreProjects.map((project) => (
+          <article className="projectCard" key={project.title}>
+            <h2>{project.title}</h2>
+            <p>{project.description}</p>
+            <p>
+              <strong>Skills Used:</strong> {project.skills}
+            </p>
+            <span>{project.status}</span>
+          </article>
+        ))}
+      </div>
+
+      <div className="additionalSection">
+        <h2>Additional Technical Projects</h2>
+        <ul>
+          {additionalProjects.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

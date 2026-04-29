@@ -1,131 +1,130 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import "./Services.scss";
-import { motion, useInView } from "framer-motion";
-import people from "../../assets/people.webp";
+
+const skillGroups = [
+  {
+    title: "IT Support",
+    items: [
+      "Hardware/software troubleshooting",
+      "Windows, macOS, Linux",
+      "Remote support and user support",
+      "Workstation setup",
+    ],
+  },
+  {
+    title: "Networking",
+    items: [
+      "TCP/IP, DNS, DHCP",
+      "Router configuration",
+      "Network troubleshooting",
+      "Ethernet cable installation and termination",
+      "Network hardware installation",
+    ],
+  },
+  {
+    title: "Server & Systems",
+    items: [
+      "Windows Server",
+      "Active Directory and Domain Controllers",
+      "Group Policy",
+      "DHCP server configuration",
+      "DNS server configuration",
+    ],
+  },
+  {
+    title: "Tools",
+    items: ["VMware", "VirtualBox", "Wireshark", "Git", "GitHub"],
+  },
+  {
+    title: "Programming",
+    items: ["Python", "JavaScript", "SQL", "HTML", "CSS"],
+  },
+  {
+    title: "Electronics & Field Skills",
+    items: [
+      "Electrical installation",
+      "Control panels",
+      "Electronic troubleshooting",
+      "Cabling",
+      "Hardware diagnostics",
+    ],
+  },
+  {
+    title: "Soft Skills",
+    items: [
+      "Problem-solving",
+      "Communication",
+      "Teamwork",
+      "Teaching and training users",
+    ],
+  },
+];
+
+const experience = [
+  "IT Support Specialist (Freelance) – SRBA",
+  "Help Desk Technician (Freelance) – Banh Mi Oven",
+  "Networking & Programming Instructor – KMD Myanmar",
+  "Electrical & Electronic Technician – Asia Power Quality",
+  "Substitute Teacher – Current (communication, leadership, classroom management, patience, and clear explanation of concepts)",
+];
+
+const education = [
+  "BSc (Hons) Computing – University of Greenwich, First Class",
+  "Diploma in Network Communication – Yangon University",
+  "Certificate in Mechatronics – SMVTI",
+  "CompTIA Network+ – In Progress",
+];
 
 const Services = () => {
-  const ref = useRef();
-  const isInView = useInView(ref, { margin: "-100px" });
-
-  const variants = {
-    initial: {
-      x: -500,
-      y: 100,
-      opacity: 0,
-    },
-    animate: {
-      x: 0,
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   return (
-    <motion.div
-      className="service"
-      variants={variants}
-      initial="initial"
-      animate="animate"
-      ref={ref}
-    >
-      <motion.div className="textContainer" variants={variants}>
+    <div className="service">
+      <section className="contentSection" id="About">
+        <h2>About Me</h2>
         <p>
-          Focus on best quality
-          <br /> and customer satisfaction
+          I am based in Los Angeles, CA with a First-Class BSc in Computing and
+          hands-on experience in IT support, networking, Windows Server, Active
+          Directory, DNS/DHCP, virtualization, router configuration, Ethernet
+          cabling, Wireshark, hardware/software troubleshooting, and
+          electronics. I am currently preparing for CompTIA Network+ and
+          seeking IT Support, Network Technician, Field Technician, Help Desk,
+          and Computer Support roles.
         </p>
-        <hr />
-      </motion.div>
-      <motion.div className="titleContainer" variants={variants}>
-        <div className="title">
-          <img src={people} alt="" />
-          <h1>
-            <motion.b whileHover={{ color: "orange" }}>Grow</motion.b> Your
-          </h1>
-        </div>
+      </section>
 
-        <div className="title">
-          <h1>
-            <motion.b whileHover={{ color: "orange" }}>Business</motion.b> With
-            Me
-          </h1>
-          <button>What I DO?</button>
+      <section className="contentSection" id="Skills">
+        <h2>Skills</h2>
+        <div className="skillsGrid">
+          {skillGroups.map((group) => (
+            <article className="skillCard" key={group.title}>
+              <h3>{group.title}</h3>
+              <ul>
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
-      </motion.div>
-      <motion.div className="listContainer" variants={variants}>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Effective Branding Strategies:Branding is more than just a logo or a
-            color scheme; it's about creating a distinct identity that resonates
-            with your target audience. My approach to branding involves
-            understanding the core values and vision of your business and
-            translating them into a cohesive and compelling brand narrative.
-            From creating a unique brand voice to designing visual elements that
-            capture your essence, I ensure that every aspect of your brand
-            communicates your story effectively. Successful branding results in
-            strong customer loyalty and recognition in the market.
-          </p>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Design</h2>
-          <p>
-            Innovative and User-Centric Design: Great design combines aesthetics
-            with functionality. My design philosophy is centered around creating
-            user-friendly interfaces that are not only visually appealing but
-            also intuitive to navigate. Whether it's designing websites, mobile
-            apps, or marketing materials, I focus on delivering designs that
-            enhance user experience and engagement. My process includes thorough
-            research, wireframing, prototyping, and iterative testing to ensure
-            that the final product meets the needs of both the business and its
-            users.
-          </p>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Maintenance</h2>
-          <p>
-            Reliable Maintenance Services:Maintaining your digital assets is
-            crucial to ensuring they remain secure, up-to-date, and functional.
-            I offer comprehensive maintenance services that include regular
-            updates, security checks, and performance optimizations. Whether you
-            need ongoing support for your website, app, or software, I provide
-            timely and efficient solutions to prevent issues before they arise.
-            My goal is to keep your digital platforms running smoothly so you
-            can focus on growing your business without any technical
-            interruptions.
-          </p>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Development</h2>
-          <p>
-            Cutting-Edge Development Solutions:In today's fast-paced digital
-            landscape, having a robust and scalable development solution is
-            essential. I specialize in creating custom software, websites, and
-            applications tailored to your specific needs. Using the latest
-            technologies and best practices, I develop solutions that are
-            secure, efficient, and easy to maintain. From initial concept to
-            deployment, I work closely with you to ensure that the final product
-            not only meets but exceeds your expectations. Let me help you turn
-            your ideas into reality with innovative development services.
-          </p>
-        </motion.div>
-      </motion.div>
-    </motion.div>
+      </section>
+
+      <section className="contentSection" id="Experience">
+        <h2>Experience</h2>
+        <ul className="listBlock">
+          {experience.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="contentSection" id="Education">
+        <h2>Education & Certifications</h2>
+        <ul className="listBlock">
+          {education.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+    </div>
   );
 };
 

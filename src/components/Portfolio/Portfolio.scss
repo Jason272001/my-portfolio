@@ -10,7 +10,7 @@
 
   .progress {
     text-align: center;
-    color: #123a6d;
+    color: #93c5fd;
     padding: 8px;
 
     h1 {
@@ -33,8 +33,8 @@
   }
 
   .projectCard {
-    background: #ffffff;
-    border: 1px solid #d8e2ef;
+    background: #0f1726;
+    border: 1px solid #22304a;
     border-radius: 12px;
     padding: 18px;
     display: grid;
@@ -42,19 +42,19 @@
 
     h2 {
       font-size: 22px;
-      color: #102a43;
+      color: #f8fafc;
     }
 
     p {
-      color: #334e68;
+      color: #c4cfdd;
       line-height: 1.5;
     }
 
     span {
       font-size: 14px;
       font-weight: 700;
-      color: #0b6e4f;
-      background: #e6f4ee;
+      color: #bfdbfe;
+      background: #172554;
       width: fit-content;
       padding: 6px 10px;
       border-radius: 16px;
@@ -62,13 +62,13 @@
   }
 
   .additionalSection {
-    background: #f8fbff;
-    border: 1px solid #d8e2ef;
+    background: #0f1726;
+    border: 1px solid #22304a;
     border-radius: 12px;
     padding: 20px;
 
     h2 {
-      color: #123a6d;
+      color: #93c5fd;
       margin-bottom: 10px;
     }
 
@@ -76,7 +76,7 @@
       padding-left: 20px;
       display: grid;
       gap: 8px;
-      color: #334e68;
+      color: #c4cfdd;
     }
   }
 }

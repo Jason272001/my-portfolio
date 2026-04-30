@@ -23,7 +23,7 @@ const Contact = () => {
   const svgStyles = {
     st0: {
       fill: "none",
-      stroke: "orange",
+      stroke: "#3b82f6",
       strokeWidth: 0.5,
       strokeLinecap: "round",
       strokeLinejoin: "round",
@@ -72,10 +72,6 @@ const Contact = () => {
         <motion.div className="item" variants={variants}>
           <h2>Address</h2>
           <span>Los Angeles, California, United States</span>
-        </motion.div>
-        <motion.div className="item" variants={variants}>
-          <h2>Phone</h2>
-          <span>+1 425 380 1963</span>
         </motion.div>
       </motion.div>
       <div className="formContainer">

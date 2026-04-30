@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Sidebar from "../Sidebar/Sidebar";
 import linkedin from "../../assets/linkedin.png";
 import facebook from "../../assets/facebook.png";
-import whatsapp from "../../assets/whatsapp.png";
 import github from "../../assets/github.png";
 
 const Navbar = () => {
@@ -24,9 +23,6 @@ const Navbar = () => {
           </a>
           <a href="https://www.facebook.com/profile.php?id=100004829777007">
             <img src={facebook} alt="" />
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=14253801963">
-            <img src={whatsapp} alt="" />
           </a>
           <a href="https://github.com/Jason272001">
             <img

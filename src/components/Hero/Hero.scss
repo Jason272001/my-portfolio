@@ -7,8 +7,8 @@
   align-items: center;
   gap: 24px;
   padding: 32px;
-  background-color: #eef3fa;
-  color: #13294b;
+  background-color: #070b14;
+  color: #e6edf7;
 
   @include mobile {
     flex-direction: column-reverse;
@@ -24,13 +24,13 @@
 
     h2 {
       font-size: 28px;
-      color: #1d3557;
+      color: #93c5fd;
     }
 
     h1 {
       font-size: 42px;
       line-height: 1.2;
-      color: #0b1f3a;
+      color: #f8fafc;
 
       @include mobile {
         font-size: 28px;
@@ -40,7 +40,7 @@
     p {
       font-size: 18px;
       max-width: 680px;
-      color: #334e68;
+      color: #b6c3d6;
     }
 
     .buttonGroup {
@@ -53,7 +53,7 @@
       }
 
       .cta {
-        background-color: #123a6d;
+        background-color: #3b82f6;
         color: #fff;
         padding: 10px 18px;
         border-radius: 8px;
@@ -61,8 +61,9 @@
       }
 
       .secondary {
-        background-color: #dce7f5;
-        color: #123a6d;
+        background-color: #151f31;
+        color: #dbeafe;
+        border: 1px solid #2f3c50;
       }
     }
   }
@@ -76,7 +77,7 @@
       max-width: 360px;
       width: 100%;
       border-radius: 12px;
-      border: 3px solid #d3deed;
+      border: 3px solid #22304a;
     }
   }
 }

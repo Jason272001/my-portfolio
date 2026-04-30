@@ -5,8 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  color: black;
+  background-color: #0f1726;
+  color: #f8fafc;
 
   .bg {
     z-index: 999;
@@ -15,7 +15,7 @@
     left: 0;
     bottom: 0;
     width: 400px;
-    background: white;
+    background: #0f1726;
 
     @include mobile {
       width: 200px;

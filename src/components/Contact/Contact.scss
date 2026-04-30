@@ -27,12 +27,19 @@
     h1 {
       font-size: 100px;
       line-height: 88px;
+      color: #f8fafc;
       @include mobile {
         font-size: 35px;
       }
     }
+
+    h2 {
+      color: #93c5fd;
+    }
+
     span {
       font-weight: 300;
+      color: #d8e2f1;
     }
   }
 
@@ -63,9 +70,9 @@
     input,
     textarea {
       padding: 20px;
-      background-color: transparent;
-      border: 1px solid white;
-      color: white;
+      background-color: #101827;
+      border: 1px solid #2f3c50;
+      color: #f8fafc;
       border-radius: 5px;
 
       @include mobile {
@@ -76,9 +83,10 @@
     button {
       padding: 20px;
       border: none;
-      background-color: orange;
+      background-color: #3b82f6;
+      color: #ffffff;
       cursor: pointer;
-      font-weight: 300;
+      font-weight: 700;
     }
   }
 }

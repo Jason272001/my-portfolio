@@ -2,8 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+
 const Links = () => {
-  const items = ["Homepage", "Services", "Portfolio", "Contact"];
+  const items = ["Homepage", "About", "Portfolio", "Contact"];
   const variants = {
     open: {
       transition: {

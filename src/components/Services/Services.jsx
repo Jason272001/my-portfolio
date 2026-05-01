@@ -72,7 +72,7 @@ const education = [
   "BSc (Hons) Computing – University of Greenwich, First Class",
   "Diploma in Network Communication – Yangon University",
   "Certificate in Mechatronics – SMVTI",
-  "CompTIA Network+ – In Progress",
+  "CompTIA Network+ Certification",
 ];
 
 const Services = () => {
@@ -85,7 +85,7 @@ const Services = () => {
           hands-on experience in IT support, networking, Windows Server, Active
           Directory, DNS/DHCP, virtualization, router configuration, Ethernet
           cabling, Wireshark, hardware/software troubleshooting, and
-          electronics. I am currently preparing for CompTIA Network+ and
+          electronics. I hold the CompTIA Network+ certification and am
           seeking IT Support, Network Technician, Field Technician, Help Desk,
           and Computer Support roles.
         </p>
